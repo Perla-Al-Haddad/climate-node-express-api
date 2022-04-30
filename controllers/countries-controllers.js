@@ -3,7 +3,7 @@ const utils = require("../utils/utils");
 
 const pool = conn.pool;
 
-const command_base =    `
+const command_base = `
         SELECT      country.*, lending_category.lending_category_description, income_group.income_group_description, region.region_name
         FROM        country 
         INNER JOIN  lending_category ON country.lending_category_fk = lending_category.lending_category_id

@@ -5,6 +5,7 @@ const getCommandResults = (pool, command, res) => {
             throw error;
         }
         let status = (results.rows.length) ?  200 : 204; 
+        console.log(results.rows)
         res.status(status).json({status: "success", data: results.rows});
     });
 }

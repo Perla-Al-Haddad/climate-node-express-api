@@ -1,6 +1,7 @@
 const express = require("express");
 
-const countryRoutes = require("./routes/countries-routes")
+const countriesRoutes = require("./routes/countries-routes")
+const seriesRoutes = require("./routes/series-routes")
 
 const app = express();
 const PORT = 5000;
@@ -23,6 +24,7 @@ app.get('/', (req, res) => {
     res.send('API Docs');
 });
 
-app.use("/countries", countryRoutes);
+app.use("/api/countries", countriesRoutes);
+app.use("/api/series", seriesRoutes);
 
 app.listen(PORT, () => { console.log(`Climate Data API listening on port ${PORT}!`);})
