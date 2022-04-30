@@ -1,7 +1,8 @@
 const express = require("express");
 
-const countriesRoutes = require("./routes/countries-routes")
-const seriesRoutes = require("./routes/series-routes")
+const countriesRoutes = require("./routes/countries-routes");
+const seriesRoutes = require("./routes/series-routes");
+const observationsRoutes = require("./routes/observations-routes");
 
 const app = express();
 const PORT = 5000;
@@ -20,11 +21,12 @@ app.use((req, res, next) => {
 });
 
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
     res.send('API Docs');
 });
 
 app.use("/api/countries", countriesRoutes);
 app.use("/api/series", seriesRoutes);
+app.use("/api/observations", observationsRoutes);
 
 app.listen(PORT, () => { console.log(`Climate Data API listening on port ${PORT}!`);})

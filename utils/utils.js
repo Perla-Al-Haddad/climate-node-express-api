@@ -5,9 +5,16 @@ const getCommandResults = (pool, command, res) => {
             throw error;
         }
         let status = (results.rows.length) ?  200 : 204; 
-        console.log(results.rows)
         res.status(status).json({status: "success", data: results.rows});
     });
 }
 
+const formatISOarray = (ISOString) => {
+    let isos = ISOString.split(",");
+    for (let i = 0; i < isos.length; i++) 
+        isos[i] = "'" + isos[i] + "'";
+    return isos.join(",");
+}
+
 exports.getCommandResults = getCommandResults;
+exports.formatISOarray = formatISOarray
