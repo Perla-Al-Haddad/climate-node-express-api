@@ -1,6 +1,6 @@
 const express = require("express");
 
-const countryRoutes = require("./routes/country-routes")
+const countryRoutes = require("./routes/countries-routes")
 
 const app = express();
 const PORT = 5000;
