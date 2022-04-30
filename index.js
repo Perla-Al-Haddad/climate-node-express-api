@@ -29,4 +29,4 @@ app.use("/api/countries", countriesRoutes);
 app.use("/api/series", seriesRoutes);
 app.use("/api/observations", observationsRoutes);
 
-app.listen(PORT, () => { console.log(`Climate Data API listening on port ${PORT}!`);})
+app.listen(process.env.PORT || PORT, () => { console.log(`Climate Data API listening on port ${process.env.PORT || PORT}!`);})
