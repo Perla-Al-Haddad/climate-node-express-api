@@ -1,4 +1,4 @@
-const conn = require("../database-connection");
+const conn = require("../utils/database-connection");
 const utils = require("../utils/utils");
 
 const pool = conn.pool;
